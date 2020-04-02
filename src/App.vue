@@ -1,29 +1,21 @@
 <template>
   <div id="app">
 
-    <Accueil msg="Cherche ton film"/>
-  
+    <nav class="topnav">
+      <router-link tag="a" to="/">&nbsp;Search</router-link>
+    </nav>
+    
+    <router-view />
+
   </div>
 </template>
 
 <script>
-import Accueil from './components/Accueil.vue'
-
 export default {
   name: 'App',
-  components: {
-    Accueil
-  }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import url("./assets/main.css");
 </style>

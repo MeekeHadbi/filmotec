@@ -1,0 +1,83 @@
+/******************************************
+                Général
+******************************************/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+h3 {
+    margin: 40px 0 0;
+}
+
+a {
+    color: #42b983;
+}
+
+
+/******************************************
+                App.vue
+******************************************/
+#app {
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+}
+  
+nav.topnav {
+    background-color: darkblue;
+    border: black 1px solid;
+    margin-top: -4.7%;
+    margin-bottom: 4%;
+    padding: 1.5%;
+    text-align: left;
+    color: white;
+}
+  
+nav.topnav a {
+    padding: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+
+/******************************************
+                Movie.vue
+******************************************/
+#infos_movie {
+    display: flex;
+    justify-content: space-around;
+}
+
+#infos_movie #details_movie {
+    width: 60%;
+}
+
+#infos_movie #title_movie {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#infos_movie #title_movie h2 {
+    margin-bottom: -0.5%;
+    color: darkblue;
+    letter-spacing: 2px;
+}
+
+#infos_movie ul {
+    list-style-type: none;
+    text-align: left;
+}
+
+#infos_movie li {
+    margin-bottom: 20px;
+}
+
+#infos_movie #poster_movie #none-image {
+    border: darkblue 1px solid;
+    width: 200px;
+    height: 300px;
+}
