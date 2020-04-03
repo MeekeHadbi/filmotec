@@ -4,14 +4,20 @@
 html, body {
     margin: 0;
     padding: 0;
+    background: url("back2.3.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-size: 600%;
+    color: white;
+    text-shadow: 5px 0 0 darkslategrey, 5px 5px 0 darkslategrey, 0 5px 0 darkslategrey, -5px 5px 0 darkslategrey, -5px 0 0 darkslategrey, -5px -5px 0 darkslategrey, 0 -5px 0 darkslategrey, 5px -5px 0 darkslategrey;
 }
 
 h3 {
     margin: 40px 0 0;
-}
-
-a {
-    color: #42b983;
 }
 
 
@@ -23,16 +29,14 @@ a {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
     margin-top: 60px;
 }
   
 nav.topnav {
-    background-color: darkblue;
-    border: black 1px solid;
+    background-color: darkslategrey;
     margin-top: -4.7%;
     margin-bottom: 4%;
-    padding: 1.5%;
+    padding: 2%;
     text-align: left;
     color: white;
 }
@@ -43,6 +47,26 @@ nav.topnav a {
     text-decoration: none;
 }
 
+nav.topnav #logo_app {
+    float: right;
+    margin-top: -1%;
+    margin-right: 50%;
+    transform: translate(50%);
+}
+
+
+/******************************************
+                Accueil.vue
+******************************************/
+#moviePreList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+blocMoviePre {
+    cursor: pointer;
+}
 
 /******************************************
                 Movie.vue
@@ -50,10 +74,17 @@ nav.topnav a {
 #infos_movie {
     display: flex;
     justify-content: space-around;
+    background-color: white;
+    border-radius: 50px 5px 5px 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #infos_movie #details_movie {
     width: 60%;
+    margin-left: -5%;
 }
 
 #infos_movie #title_movie {
@@ -63,7 +94,7 @@ nav.topnav a {
 
 #infos_movie #title_movie h2 {
     margin-bottom: -0.5%;
-    color: darkblue;
+    color: darkslategrey;
     letter-spacing: 2px;
 }
 
@@ -77,7 +108,27 @@ nav.topnav a {
 }
 
 #infos_movie #poster_movie #none-image {
-    border: darkblue 1px solid;
+    border: darkslategrey 1px solid;
     width: 200px;
     height: 300px;
+}
+
+
+/******************************************
+                MoviePre.vue
+******************************************/
+#moviePre {
+    display: flex;
+    background-color: white;
+    border-radius: 50px 5px 5px 5px;
+    width: 500px;
+    height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 5%;
+}
+
+#moviePre #details_preMovie h5 {
+    color: darkslategrey;
+    letter-spacing: 1px;
 }

@@ -30,7 +30,7 @@
             </div>
 
             <div id="poster_movie">
-                <img v-if="this.poster_path !== null" v-bind:src="'http://image.tmdb.org/t/p/w500/' + this.poster_path" width='200px'>
+                <img v-if="this.poster_path !== null" v-bind:src="'http://image.tmdb.org/t/p/w500' + this.poster_path" width='200px'>
                 <div id="none-image" v-else>
                     <small><i>Pas d'image recensée</i></small>
                 </div>
@@ -46,7 +46,6 @@ import axios from 'axios'
 
 export default {
     name: 'Movie',
-    //https://api.themoviedb.org/3/movie/343611?api_key=2a451d7a356fe15263f27b868d8c1014
     data() {    
         return {
             title: '',
