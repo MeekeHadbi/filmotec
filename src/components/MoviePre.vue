@@ -22,6 +22,7 @@
 
 <script>
 export default {
+    name: "MoviePre",
     props: {
         title: String,
         date: String,

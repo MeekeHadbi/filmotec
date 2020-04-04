@@ -1,48 +1,54 @@
 <template>
-  
   <div id="comments">
-
     <p id="msg_alert">{{ msg }}</p>
 
     <div id="commentForm" @submit.prevent="submitComment">
       <form class="flex flex-col">
-        <select v-model="stars">
+        <select v-model.number="stars">
           <option disabled value="">Nombre d'étoile</option>
-          <option v-for="index in 5" :key="index">{{ index }}</option>
+          <option v-for="index in 5" :key=index>{{ index }}</option>
         </select>
         <textarea rows="5" cols="33" v-model="comment">Laisser votre plus beau commentaire !</textarea>
         <button type="submit">Commenter!</button>
       </form>
     </div>
 
-    <div id="allComments" v-for='com in comsMovie' :key='com.id_com'>
-      <Comment :id_critic=com.id_critic :stars=com.stars :com=com.com />
+    <div id="allComments" v-for="com in comsMovie" :key="com.id_com">
+      <Comment :id_critic="com.id_critic" :stars="com.stars" :com="com.com" />
     </div>
-
   </div>
-
-
 </template>
 
 <script>
-import comJson from '../json/comments.json'
-import Comment from './Comment.vue'
+import comJson from "../json/comments.json";
+import Comment from "./Comment.vue";
+import axios from "axios";
 
 export default {
-    data(){
-        return{
-            comment: '',
-            stars: '',
-            msg: '',
-            comsMovie: ''
-        }
-    },
-    components: {
-      Comment
-    },
-    methods: {
-        submitComment(){
-          if(this.comment != '' && this.stars != '') {
+  name: "Comments",
+  data() {
+    return {
+      comment: "",
+      stars: "",
+      msg: "",
+      comsMovie: ""
+    };
+  },
+  components: {
+    Comment
+  },
+  props: {
+    title: String
+  },
+  methods: {
+    submitComment() {
+      axios.post("http://127.0.0.1:8000/api/critiques", {
+        movieName: this.$route.params.id,
+        commentaire: this.comment,
+        stars: this.stars
+      });
+
+      /*if(this.comment != '' && this.stars != '') {
             
             this.msg = ''
 
@@ -51,20 +57,20 @@ export default {
           } else {
             this.msg = "Il faut mettre un commentaire et un nombre d'étoile !"
             console.log(this.msg)
-          }
-        },
-
-        getComments(idMovie) {
-          comJson.forEach(element => {
-            if(element.id_movie == idMovie) {
-              this.comsMovie = element.comments
-            }
-          });
-        }
+          }*/
     },
-    beforeMount(){ 
-        this.getComments(this.$route.params.id)
+
+    getComments(idMovie) {
+      comJson.forEach(element => {
+        if (element.id_movie == idMovie) {
+          this.comsMovie = element.comments;
+        }
+      });
     }
+  },
+  beforeMount() {
+    this.getComments(this.$route.params.id);
+  }
 };
 </script>
 
