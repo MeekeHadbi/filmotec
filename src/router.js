@@ -10,6 +10,6 @@ export default new Router({
     routes: [
         {path:'/',name:'accueil',component:Accueil},
         {path:'/search',name:'search',component:Search},
-        {path:'/movies/:id',name:'movie',component:Movie}
+        {path:'/movies/:id',name:'movie',component:Movie},
     ]
 });

@@ -73,13 +73,9 @@ export default {
   },
   methods: {
     getInfosMovie(id_movie) {
-      axios
-        .get(
-          "https://api.themoviedb.org/3/movie/" +
-            id_movie +
-            "?api_key=2a451d7a356fe15263f27b868d8c1014"
-        )
+      axios.get('https://api.themoviedb.org/3/movie/'+id_movie+'?api_key=2a451d7a356fe15263f27b868d8c1014')
         .then(response => {
+          console.log(response)
           this.title = response.data.title;
           this.release_date = response.data.release_date;
           this.original_title = response.data.original_title;

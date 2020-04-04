@@ -1,7 +1,9 @@
 <template>
     <div id="accueil">
 
-        <div id="moviePreList" v-for='result in results' :key='result.id'>
+        <h2>Les dernières sorties les plus populaires</h2>
+
+        <div class="moviePreList" v-for='result in results' :key='result.id'>
 
             <router-link tag="blocMoviePre" v-bind:to="'/movies/'+result.id">
                 <MoviePre :title=result.title :date=result.release_date :overview=result.overview :poster_path=result.poster_path />
@@ -15,7 +17,7 @@
 <script>
 import MoviePre from '../components/MoviePre.vue'
 import axios from 'axios'
-import moment from '../../node_modules/moment'
+import moment from 'moment'
 
 export default {
     name: 'Accueil',
@@ -50,16 +52,3 @@ export default {
     }
 }
 </script>
-
-<style>
-h3{
-    color: aliceblue;
-}
-p{
-    color: aliceblue;
-}
-a:link
-{
-text-decoration:none;
-}
-</style>

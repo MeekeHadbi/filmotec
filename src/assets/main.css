@@ -58,7 +58,11 @@ nav.topnav #logo_app {
 /******************************************
                 Accueil.vue
 ******************************************/
-#moviePreList {
+#accueil h2 {
+    color: white;
+}
+
+.moviePreList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -67,6 +71,19 @@ nav.topnav #logo_app {
 blocMoviePre {
     cursor: pointer;
 }
+
+
+/******************************************
+                Search.vue
+******************************************/
+#search h3 {
+    color: white;
+}
+
+#search input {
+    margin-bottom: 2%;
+}
+
 
 /******************************************
                 Movie.vue
@@ -142,6 +159,11 @@ blocMoviePre {
     margin-top: 2%;
     margin-left: 10%;
     margin-right: 10%;
+}
+
+#comments #msg_alert {
+    color: red;
+    font-style: italic;
 }
 
 

@@ -2,8 +2,14 @@
   
   <div id="comments">
 
+    <p id="msg_alert">{{ msg }}</p>
+
     <div id="commentForm" @submit.prevent="submitComment">
       <form class="flex flex-col">
+        <select v-model="stars">
+          <option disabled value="">Nombre d'étoile</option>
+          <option v-for="index in 5" :key="index">{{ index }}</option>
+        </select>
         <textarea rows="5" cols="33" v-model="comment">Laisser votre plus beau commentaire !</textarea>
         <button type="submit">Commenter!</button>
       </form>
@@ -26,6 +32,8 @@ export default {
     data(){
         return{
             comment: '',
+            stars: '',
+            msg: '',
             comsMovie: ''
         }
     },
@@ -34,7 +42,16 @@ export default {
     },
     methods: {
         submitComment(){
-            console.log(this.comment)
+          if(this.comment != '' && this.stars != '') {
+            
+            this.msg = ''
+
+            
+
+          } else {
+            this.msg = "Il faut mettre un commentaire et un nombre d'étoile !"
+            console.log(this.msg)
+          }
         },
 
         getComments(idMovie) {

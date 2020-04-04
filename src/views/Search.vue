@@ -1,23 +1,20 @@
 <template>
-  <div>
+  <div id="search">
 
     <h3>Cherche ton film</h3>
 
     <input type='text' v-model='query' @keyup='getResult(query)'>
 
-    <div v-for='result in results' :key='result.id'>
-      <router-link v-bind:to="'/movies/'+result.id">
-        <p>{{result.title}}</p>
-        <img v-if="result.poster_path !== null" v-bind:src="'http://image.tmdb.org/t/p/w500' + result.poster_path" width='100px'>
-        <small v-else><i>Pas d'image recensée</i></small>
-      </router-link>
-    </div>
+    <router-link class="moviePreList" tag="blocMoviePre" v-for='result in results' :key='result.id' v-bind:to="'/movies/'+result.id">
+      <MoviePre :title=result.title :date=result.release_date :overview=result.overview :poster_path=result.poster_path />
+    </router-link>
     
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import MoviePre from '../components/MoviePre.vue'
 
 export default {
   name: 'Search',
@@ -29,6 +26,9 @@ export default {
       query: '',
       results: ''
     } 
+  },
+  components: {
+    MoviePre
   },
   methods: {
     getResult(query) {
