@@ -26,7 +26,7 @@ export default {
     data(){
         return{
             comment: '',
-            comsMovie: ""
+            comsMovie: ''
         }
     },
     components: {
