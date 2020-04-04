@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import MoviePre from './MoviePre.vue'
+import MoviePre from '../components/MoviePre.vue'
 import axios from 'axios'
 import moment from 'moment'
 
@@ -50,3 +50,16 @@ export default {
     }
 }
 </script>
+
+<style>
+h3{
+    color: aliceblue;
+}
+p{
+    color: aliceblue;
+}
+a:link
+{
+text-decoration:none;
+}
+</style>

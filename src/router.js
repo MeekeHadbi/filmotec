@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Accueil from './components/Accueil.vue';
-import Search from './components/Search.vue';
-import Movie from './components/Movie.vue';
+import Accueil from './views/Accueil.vue';
+import Search from './views/Search.vue';
+import Movie from './views/Movie.vue';
 
 Vue.use(Router);
 
