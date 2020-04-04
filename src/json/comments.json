@@ -1,0 +1,19 @@
+[
+    {
+        "id_movie": 401123,
+        "comments": [
+            {
+                "id_com": 1,
+                "id_critic": 11452,
+                "stars": 5,
+                "com": "Super film !"
+            },
+            {
+                "id_com": 2,
+                "id_critic": 2654,
+                "stars": 1,
+                "com": "Film nul !"
+            }
+        ]
+    }
+]

@@ -4,7 +4,7 @@
 html, body {
     margin: 0;
     padding: 0;
-    background: url("back2.3.jpg");
+    background: url("back.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -131,4 +131,27 @@ blocMoviePre {
 #moviePre #details_preMovie h5 {
     color: darkslategrey;
     letter-spacing: 1px;
+}
+
+
+/******************************************
+                Comments.vue
+******************************************/
+#comments {
+    background-color: whitesmoke;
+    margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+/******************************************
+                Comment.vue
+******************************************/
+#comment {
+    background-color: grey;
+}
+
+#comment h5 {
+    float: left;
 }

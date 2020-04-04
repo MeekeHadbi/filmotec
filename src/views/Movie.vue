@@ -27,10 +27,6 @@
             <b>Langage originale :</b>
             {{ this.original_language }}
           </li>
-          <li>
-            <b>Laisser un commentaire:</b>
-            <comment-form> </comment-form>
-          </li>
         </ul>
       </div>
 
@@ -46,13 +42,19 @@
           </small>
         </div>
       </div>
+
+
     </div>
+
+    <Comments />
+
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import CommentForm from "../components/CommentForm.vue";
+import Comments from "../components/Comments.vue";
+
 export default {
   name: "Movie",
   data() {
@@ -63,14 +65,14 @@ export default {
       overview: "",
       genres: "",
       original_language: "",
-      poster_path: ""
+      poster_path: "",
     };
   },
   components: {
-    CommentForm
+    Comments
   },
   methods: {
-    getResult(id_movie) {
+    getInfosMovie(id_movie) {
       axios
         .get(
           "https://api.themoviedb.org/3/movie/" +
@@ -78,7 +80,6 @@ export default {
             "?api_key=2a451d7a356fe15263f27b868d8c1014"
         )
         .then(response => {
-          console.log(id_movie);
           this.title = response.data.title;
           this.release_date = response.data.release_date;
           this.original_title = response.data.original_title;
@@ -90,7 +91,7 @@ export default {
     }
   },
   beforeMount() {
-    this.getResult(this.$route.params.id);
+    this.getInfosMovie(this.$route.params.id);
   }
 };
 </script>

@@ -15,7 +15,7 @@
 <script>
 import MoviePre from '../components/MoviePre.vue'
 import axios from 'axios'
-import moment from 'moment'
+import moment from '../../node_modules/moment'
 
 export default {
     name: 'Accueil',
