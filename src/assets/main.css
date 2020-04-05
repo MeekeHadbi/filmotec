@@ -165,15 +165,3 @@ blocMoviePre {
     color: red;
     font-style: italic;
 }
-
-
-/******************************************
-                Comment.vue
-******************************************/
-#comment {
-    background-color: grey;
-}
-
-#comment h5 {
-    float: left;
-}

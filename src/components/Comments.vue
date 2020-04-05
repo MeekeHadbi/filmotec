@@ -12,16 +12,10 @@
         <button type="submit">Commenter!</button>
       </form>
     </div>
-
-    <div id="allComments" v-for="com in comsMovie" :key="com.id_com">
-      <Comment :id_critic="com.id_critic" :stars="com.stars" :com="com.com" />
-    </div>
   </div>
 </template>
 
 <script>
-import comJson from "../json/comments.json";
-import Comment from "./Comment.vue";
 import axios from "axios";
 
 export default {
@@ -30,15 +24,8 @@ export default {
     return {
       comment: "",
       stars: "",
-      msg: "",
-      comsMovie: ""
+      msg: ""
     };
-  },
-  components: {
-    Comment
-  },
-  props: {
-    title: String
   },
   methods: {
     submitComment() {
@@ -55,20 +42,9 @@ export default {
           this.msg = "Il faut mettre un commentaire et un nombre d'étoile !"
         }
 
-    },
-
-    getComments(idMovie) {
-      comJson.forEach(element => {
-        if (element.id_movie == idMovie) {
-          this.comsMovie = element.comments;
-        }
-      });
     }
-  },
-  beforeMount() {
-    this.getComments(this.$route.params.id);
   }
-};
+}
 </script>
 
 <style scoped >
