@@ -42,22 +42,19 @@ export default {
   },
   methods: {
     submitComment() {
-      axios.post("http://127.0.0.1:8000/api/critiques", {
-        movieName: this.$route.params.id,
-        commentaire: this.comment,
-        stars: this.stars
-      });
+        if(this.comment != '' && this.stars != '') {
+          
+          axios.post("http://127.0.0.1:8000/api/critiques", {
+            movieId: this.$route.params.id,
+            commentaire: this.comment,
+            stars: this.stars
+          });
+          this.msg = "Commentaire envoyé"
 
-      /*if(this.comment != '' && this.stars != '') {
-            
-            this.msg = ''
+        } else {
+          this.msg = "Il faut mettre un commentaire et un nombre d'étoile !"
+        }
 
-            
-
-          } else {
-            this.msg = "Il faut mettre un commentaire et un nombre d'étoile !"
-            console.log(this.msg)
-          }*/
     },
 
     getComments(idMovie) {

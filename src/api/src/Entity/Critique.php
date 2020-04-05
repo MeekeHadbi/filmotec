@@ -21,26 +21,31 @@ class Critique
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $movieName;
+    private $movieId;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
     private $commentaire;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $stars;
+    
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getMovieName(): ?string
+    public function getMovieId(): ?int
     {
-        return $this->movieName;
+        return $this->movieId;
     }
 
-    public function setMovieName(string $movieName): self
+    public function setMovieId(int $movieId): self
     {
-        $this->movieName = $movieName;
+        $this->movieId = $movieId;
 
         return $this;
     }
@@ -53,6 +58,18 @@ class Critique
     public function setCommentaire(string $commentaire): self
     {
         $this->commentaire = $commentaire;
+
+        return $this;
+    }
+
+    public function getStars(): ?int
+    {
+        return $this->stars;
+    }
+
+    public function setStars(int $stars): self
+    {
+        $this->stars = $stars;
 
         return $this;
     }
