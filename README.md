@@ -5,10 +5,10 @@ Projet Filmotec Mission 3 / BTS SIO . Il s'agit d'une application nommée ApNotP
 Nous sommes le groupe "Rome", composé de Meeké Habdi et de Romane Leseur. L'application a été réalisée en VueJs.
 
 ## Les APIs
-Sur ce projet, nous bénéficions de deux APIs. L'une étant TMDB, une API déjà existante, nous permettant de récupérer une liste de films, basé sur des critères que nous choisissons. L'autre étant crée par nos soins et nous permettant, nottament, d'envoyer les critiques (commentaires + nombre d'étoiles choisi) dans une base de données. Cette dernière API a été créé avec de Composer/Symfony.
+Sur ce projet, nous bénéficions de deux APIs. L'une étant TMDB, une API déjà existante, nous permettant de récupérer une liste de films, basée sur des critères que nous choisissons. L'autre étant créé par nos soins et nous permettant, nottament, d'envoyer les critiques (commentaires + nombre d'étoiles choisi) dans une base de données. Cette dernière API a été créée avec de Composer/Symfony.
 
 Par ailleurs, voici la preuve de son bon fonctionnement au travers de Curl :
-![Curl, affichage de la BDD locale](/src/assets/curlAPICritiques.png)
+![Curl, affichage de la BDD locale](./src/assets/curlAPICritiques.png)
 
 ## Accès aux APIs
 Les apis sont accédées au travers du module Axios.
